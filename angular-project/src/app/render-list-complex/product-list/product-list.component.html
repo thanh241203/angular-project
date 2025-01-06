@@ -1,0 +1,12 @@
+<p>product-list works!</p>
+<input type="text" class="ekart-search-product-input" [(ngModel)]="text">
+    <button
+     [ngClass]="{'btn':true,'btn-search':text,'btn-search-disabled':!text}"
+      >Search</button>
+<p *ngIf="text"> tim kiem : {{text}}</p>
+<div class="ekart-product-container" *ngFor="let item of products">
+<div *ngIf="item.name !='thanh'">Name :  {{item.name}}</div>
+<div>Id : {{item.id}}</div>
+<div class="stack" [ngStyle]="{fontWeight:'bold',color:item.gender=='male'?'green':'blue'}"> Gender : {{item.gender}}</div>
+
+</div>
