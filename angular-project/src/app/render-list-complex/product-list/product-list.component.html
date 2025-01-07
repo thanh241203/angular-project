@@ -1,12 +1,13 @@
-<p>product-list works!</p>
-<input type="text" class="ekart-search-product-input" [(ngModel)]="text">
-    <button
-     [ngClass]="{'btn':true,'btn-search':text,'btn-search-disabled':!text}"
-      >Search</button>
-<p *ngIf="text"> tim kiem : {{text}}</p>
-<div class="ekart-product-container" *ngFor="let item of products">
-<div *ngIf="item.name !='thanh'">Name :  {{item.name}}</div>
-<div>Id : {{item.id}}</div>
-<div class="stack" [ngStyle]="{fontWeight:'bold',color:item.gender=='male'?'green':'blue'}"> Gender : {{item.gender}}</div>
-
+<app-search (onSearchChanged)="setSearchText($event)"></app-search>
+<app-filter [all]="totalId" 
+[idChan]="totalIdChan"
+ [idLe]="totalIdle"
+ (selectedFilterRadioButtonChanged)="onFilterChange($event)"
+ ></app-filter>
+<div class="ekart-product-container">
+    <!-- *ngIf="selectedIfFitlerRadioButton =='all' ||
+        item.chose.toString()==selectedIfFitlerRadioButton " -->
+    <div *ngFor="let item of products">
+        <app-product  [searhTextInPut]="searchText" [product]="item" *ngIf="searchText==''||item.name.toLowerCase().includes(searchText)"></app-product>
+    </div>
 </div>

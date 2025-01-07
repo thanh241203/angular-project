@@ -1,0 +1,5 @@
+<input  class="ekart-search-product-input" [(ngModel)]="text" (input)="onSearchChangedMethod()">
+    <button [ngClass]="{'btn':true,'btn-search':text,'btn-search-disabled':!text}">
+        Search
+    </button>
+<p *ngIf="text"> tim kiem : {{text}}</p>

@@ -1,0 +1,11 @@
+<div class="filter-container">
+    <span>Filter : </span>
+    <input type="radio" name="filter" id="" value="all" [(ngModel)]="selectedFilterRadioButton" (change)="onSelectedFilterRadioButtonChanged($event)">
+    <span>{{'All'+'('+all+')'}}</span>
+
+    <input type="radio" name="filter" id="" value="true" [(ngModel)]="selectedFilterRadioButton" (change)="onSelectedFilterRadioButtonChanged($event)">
+    <span>{{'chan'+'('+idChan+')'}}</span>
+
+    <input type="radio" name="filter" id="" value="false" [(ngModel)]="selectedFilterRadioButton"(change)="onSelectedFilterRadioButtonChanged($event)">
+    <span>{{'le'+'('+idLe+')'}}</span>    
+</div>
