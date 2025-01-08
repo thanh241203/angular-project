@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+import { Product } from '../Models/Product';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -7,12 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
   @Input()
-  product!: {
-    id: number;
-    name: string;
-    gender: string;
-    chose:boolean;
-  };
+   product!: Product
+ 
   constructor() { 
    
   }

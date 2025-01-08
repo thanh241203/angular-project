@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Product } from './Models/Product';
 
 @Component({
   selector: 'app-product-list',
@@ -7,6 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
   text:string="";
+
+  
  products=[
   {
     id:1,
@@ -30,8 +33,6 @@ selectedIfFitlerRadioButton:string='all'
   ngOnInit(): void {
   }
   onFilterChange(event:string){
-    console.log('event')
-    console.log(event)
     this.selectedIfFitlerRadioButton=event;
   }
 
@@ -42,4 +43,6 @@ selectedIfFitlerRadioButton:string='all'
     
   }
 
+// Reference Variable on Component
+  selectedProduct!: Product;
 }

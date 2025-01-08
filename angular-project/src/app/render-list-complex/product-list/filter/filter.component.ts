@@ -19,7 +19,7 @@ export class FilterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-@Output()
+  @Output()
   selectedFilterRadioButtonChanged:EventEmitter<string>=new EventEmitter<string>();
   onSelectedFilterRadioButtonChanged($event:any){
     console.log(this.selectedFilterRadioButtonChanged)

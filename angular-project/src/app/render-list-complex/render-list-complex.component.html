@@ -1,4 +1,5 @@
 <p>render-list-complex works!</p>
 <div class="ekart-product-container">
-    <app-product-list></app-product-list>
+    <app-product-list #productListComponent></app-product-list>
+    <app-product-detail *ngIf="productListComponent.selectedProduct" [productListComp]="productListComponent"></app-product-detail>
 </div>

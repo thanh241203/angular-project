@@ -7,7 +7,8 @@
 <div class="ekart-product-container">
     <!-- *ngIf="selectedIfFitlerRadioButton =='all' ||
         item.chose.toString()==selectedIfFitlerRadioButton " -->
-    <div *ngFor="let item of products">
+    <div *ngFor="let item of products" (click)="selectedProduct=item">
         <app-product  [searhTextInPut]="searchText" [product]="item" *ngIf="searchText==''||item.name.toLowerCase().includes(searchText)"></app-product>
     </div>
+    
 </div>

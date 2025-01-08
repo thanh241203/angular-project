@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @Component({
   selector: 'app-render-list-complex',
@@ -11,5 +12,5 @@ export class RenderListComplexComponent implements OnInit {
  
   ngOnInit(): void {
   }
-
+@ViewChild(ProductListComponent) productListComponent!:ProductListComponent
 }
